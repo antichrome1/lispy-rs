@@ -1,0 +1,21 @@
+[package]
+name          = "lispy"
+workspace     = ".."
+description   = "Ports of some Common Lisp functions/macros."
+homepage      = "https://crates.io/crates/lispy"
+documentation = "https://docs.rs/lispy/"
+categories          .workspace = true
+keywords            .workspace = true
+version             .workspace = true
+edition             .workspace = true
+license             .workspace = true
+authors             .workspace = true
+repository          .workspace = true
+
+[dependencies]
+lispy-procmacros   = "0.1.0"
+macrobat.workspace = true
+
+[lib]
+name = "lispy"
+path = "lispy.rs"

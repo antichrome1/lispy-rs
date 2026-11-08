@@ -1,0 +1,22 @@
+[package]
+name          = "lispy-procmacros"
+homepage      = "https://crates.io/crates/lispy-procmacros"
+description   = "See crate: `lispy`"
+documentation = "https://docs.rs/lispy-procmacros/"
+version       .workspace = true
+edition       .workspace = true
+authors       .workspace = true
+repository    .workspace = true
+license       .workspace = true
+keywords      .workspace = true
+categories    .workspace = true
+
+[dependencies]
+proc-macro2 .workspace = true
+quote       .workspace = true
+syn         .workspace = true
+
+[lib]
+name       = "lispy_procmacros"
+path       = "lispy_procmacros.rs"
+proc-macro = true
