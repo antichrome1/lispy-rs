@@ -3,20 +3,29 @@ name          = "lispy-procmacros"
 homepage      = "https://crates.io/crates/lispy-procmacros"
 description   = "See crate: `lispy`"
 documentation = "https://docs.rs/lispy-procmacros/"
-version       .workspace = true
-edition       .workspace = true
-authors       .workspace = true
-repository    .workspace = true
-license       .workspace = true
-keywords      .workspace = true
-categories    .workspace = true
+version       = "0.1.2"
+edition       = "2024"
+keywords      = ["macro", "proc-macro", "lisp"]
+categories    = ["rust-patterns", "development-tools"]
+authors       = ["Aditya Singh <antichrome1@proton.me>"]
+license       = "ISC"
+repository    = "https://github.com/antichrome1/lispy-rs"
 
 [dependencies]
-proc-macro2 .workspace = true
-quote       .workspace = true
-syn         .workspace = true
+proc-macro2      = "1"
+quote            = "1"
+syn              = { version = "3", features = ["full"] }
+macrobat         = "0.9.3"
 
 [lib]
 name       = "lispy_procmacros"
 path       = "lispy_procmacros.rs"
 proc-macro = true
+
+[profile.release]
+strip         = true
+opt-level     = 3
+lto           = true
+codegen-units = 1
+debug         = false
+panic         = 'unwind'

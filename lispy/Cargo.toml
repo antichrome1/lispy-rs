@@ -1,22 +1,29 @@
 [package]
 name          = "lispy"
-workspace     = ".."
 description   = "Ports of some Common Lisp functions/macros."
 homepage      = "https://crates.io/crates/lispy"
 documentation = "https://docs.rs/lispy/"
-categories          .workspace = true
-keywords            .workspace = true
-version             .workspace = true
-edition             .workspace = true
-license             .workspace = true
-authors             .workspace = true
-repository          .workspace = true
-readme              .workspace = true
+repository    = "https://github.com/antichrome1/lispy-rs"
+version       = "0.1.2"
+edition       = "2024"
+keywords      = ["macro", "proc-macro", "lisp"]
+categories    = ["rust-patterns", "development-tools"]
+authors       = ["Aditya Singh <antichrome1@proton.me>"]
+license       = "ISC"
+readme        = "README.md"
 
 [dependencies]
-lispy-procmacros   = "0.1.0"
-macrobat.workspace = true
+macrobat         = "0.9.3"
+lispy-procmacros = "0.1.2"
 
 [lib]
 name = "lispy"
 path = "lispy.rs"
+
+[profile.release]
+strip         = true
+opt-level     = 3
+lto           = true
+codegen-units = 1
+debug         = false
+panic         = 'unwind'

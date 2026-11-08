@@ -3,28 +3,10 @@
 version = 4
 
 [[package]]
-name = "lispy"
-version = "0.1.0"
+name = "lispy-procmacros"
+version = "0.1.2"
 dependencies = [
- "lispy-procmacros 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "macrobat",
-]
-
-[[package]]
-name = "lispy-procmacros"
-version = "0.1.0"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn",
-]
-
-[[package]]
-name = "lispy-procmacros"
-version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4dedde1aa8da3badf4c9dd4e14face5f2f8b3b03642ddd30d153247783fcf5d9"
-dependencies = [
  "proc-macro2",
  "quote",
  "syn",
