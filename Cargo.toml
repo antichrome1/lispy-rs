@@ -4,7 +4,7 @@ members  = ["lispy-procmacros", "lispy"]
 
 [workspace.package]
 repository    = "https://github.com/antichrome1/lispy-rs"
-version       = "0.1.0"
+version       = "0.1.1"
 edition       = "2024"
 keywords      = ["macro", "proc-macro", "lisp"]
 categories    = ["rust-patterns", "development-tools"]
