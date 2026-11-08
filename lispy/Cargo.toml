@@ -11,6 +11,7 @@ edition             .workspace = true
 license             .workspace = true
 authors             .workspace = true
 repository          .workspace = true
+readme              .workspace = true
 
 [dependencies]
 lispy-procmacros   = "0.1.0"
