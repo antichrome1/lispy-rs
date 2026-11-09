@@ -1,5 +1,14 @@
 macros! {
     /// Run the body exactly N times.
+    /// ```
+    /// use lispy::ntimes;
+    ///
+    /// let mut runs = 0;
+    /// ntimes!(5 => {
+    ///     runs += 1;
+    /// });
+    /// assert_eq!(runs, 5);
+    /// ```
     macro ntimes($n:expr => $body:block) {
         for _ in 0..$n {
             $body
@@ -7,7 +16,7 @@ macros! {
     } @export @wrap
 
     macro dotimes(($var:ident, $count:expr $(, $result:expr)?) $($body:tt)*) {
-       let __count: usize = $count;
+        let __count: usize = $count;
         #[allow(unused_variables)]
         for $var in 0..__count {
             $($body)*
@@ -133,21 +142,22 @@ mod ntimes_dotimes_tests {
     use std::cell::Cell;
 
     #[test]
-    fn runs_exactly_n_times() {
+    fn runs_exactly_n_times_with_expr() {
         let mut runs = 0;
-        dotimes!((_i, 5) {
+        let a = 6;
+        ntimes!(a + 5 => {
             runs += 1;
         });
-        assert_eq!(runs, 5);
+        assert_eq!(runs, 11);
     }
 
     #[test]
-    fn zero_count_runs_nothing() {
+    fn runs_exactly_n_times() {
         let mut runs = 0;
-        dotimes!((_i, 0) {
+        ntimes!(5 => {
             runs += 1;
         });
-        assert_eq!(runs, 0);
+        assert_eq!(runs, 5);
     }
 
     #[test]
