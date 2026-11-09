@@ -19,7 +19,7 @@ macrobat         = "0.9.3"
 
 [lib]
 name       = "lispy_procmacros"
-path       = "lispy_procmacros.rs"
+path       = "src/lispy_procmacros.rs"
 proc-macro = true
 
 [profile.release]

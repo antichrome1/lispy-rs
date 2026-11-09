@@ -18,7 +18,7 @@ lispy-procmacros = "0.1.2"
 
 [lib]
 name = "lispy"
-path = "lispy.rs"
+path = "src/lispy.rs"
 
 [profile.release]
 strip         = true
